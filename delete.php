@@ -7,7 +7,7 @@
              $result = mysqli_query($con,$query);
              if($result)
              {
-                 header("location:view.php");
+                 header("Location: view.php");
              }
              else
              {
@@ -16,7 +16,7 @@
         }
          else
          {
-            header("location:view.php");
+            header("Location: view.php");
          }
 
          ?>
