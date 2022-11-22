@@ -20,16 +20,16 @@
 <body class="bg-dark">
 
         <div class="container">
-        <a href="http://localhost/DBMSPROJECT/insert.php">GO BACK TO INSERTING</a>
+        <a  href="http://localhost/DBMSPROJECT/insert.php"><h2 style="margin-top:15px;text-align:center;">GO BACK TO INSERTING</h2></a>
             <div class="row">
                 <div class="col m-auto">
                     <div class="card mt-5">
                         <table class="table table-bordered">
                             <tr>
-                                <td> phone </td>
-                                <td> donar id </td>
-                               <td> Edit  </td>
-                                <td> Delete </td>
+                              <td> PHONE </td> 
+                                <  <td> DONAR ID </td> 
+                                <td> EDIT  </td> 
+                              <td> DELETE </td> 
                             </tr>
 <?php 
                                     
@@ -42,8 +42,8 @@
                                     <tr>
                                         <td><?php echo $Phone_no ?></td>
                                         <td><?php echo $Donar_id ?></td>
-                                        <td><a href="you.php?GetID=<?php echo $Donar_id ?>">Edit</a></td>
-                                        <td><a href="delete.php?Del=<?php echo $Donar_id ?>">Delete</a></td>
+                                        <td><a href="you.php?GetID=<?php echo $Phone_no ?>">Edit</a></td>
+                                        <td><a href="delete.php?Del=<?php echo $Phone_no ?>">Delete</a></td>
                                     </tr>        
                             <?php 
                                     }  

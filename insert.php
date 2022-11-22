@@ -32,6 +32,9 @@
                 </div>
             </div>
         </div>
-    
+        <div class="row">
+                <div class="col-lg-8 m-auto">
+        <a href="admin.php"><button class="btn btn-danger"
+                                name="back">Back</button></a></div></div>
 </body>
 </html>

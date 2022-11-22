@@ -1,84 +1,61 @@
-<?php
-  require_once ("config.php");
-  if($_SERVER["REQUEST_METHOD"]=="POST")
-  {
-   
-   
-  }
+<?php 
+
+    require_once("crudcon.php");
+    $query = "select * from donar ";
+    $result = mysqli_query($con,$query);
+
 ?>
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>
-      body {
-        font-family: Arial, Helvetica, sans-serif;
-      }
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <link rel="stylesheet" a href="CSS/bootstrap.css"/>
+    <title>View Records</title>
+</head>
+<body class="bg-dark">
 
-      input[type="text"],
-      input[type="password"] {
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        font-size: 20px;
-        display: inline-block;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
-      }
+        <div class="container">
+        <a  href="admin.php"><h2 style="margin-top:15px;text-align:center;">Go BACK</h2></a>
+            <div class="row">
+                <div class="col m-auto">
+                    <div class="card mt-5">
+                        <table class="table table-bordered">
+                            <tr>
+                                <td> DONAR NAME </td> 
+                                <td> DONAR ID </td> 
+                                <td> GENDER  </td> 
+                                <td> DONAR AGE </td> 
+                            </tr>
+<?php 
+                                    
+                                    while($row=mysqli_fetch_assoc($result))
+                                    {
+                                        $Donar_id = $row['Donar_id'];
+                                        $Donar_name = $row['DName'];
+                                        $gender=$row["Dsex"];
+                                        $age=$row["DAge"];
+                                       
+                            ?>
+                                    <tr>
+                                        <td><?php echo $Donar_name ?></td>
+                                        <td><?php echo $Donar_id ?></td>
+                                        <td><?php echo $gender ?></td>
+                                        <td><?php echo $age ?></td>
+                                    </tr>        
+                            <?php 
+                                    }  
+                            ?>                                                                    
+                                   
 
-      button {
-        background-color: #04aa6d;
-        color: white;
-        padding: 14px 20px;
-        margin: 8px 0;
-        border: none;
-        cursor: pointer;
-        width: 100%;
-      }
-
-      button:hover {
-        opacity: 0.8;
-      }
-
-      .container {
-        padding: 16px;
-        margin: auto;
-      }
-      form {
-        margin-top: 100px;
-        margin: auto;
-        width: 30%;
-        border: 2px solid #04aa6d;
-      }
-      .type_of {
-        display: flex;
-        width: 32%;
-        margin: auto;
-      }
-      a {
-        width: 100%;
-      }
-    </style>
-  </head>
-  <body style="margin: 0; padding: 0">
-    <h1 style="text-align: center; color: brown">
-      Bloodbank Management system
-    </h1>
-    <p>
-      ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    </p>
-    <div class="type_of">
-      <a href="admin.php"
-        ><button
-          style="background-color: rgb(19, 19, 200); border: 2px solid white"
-        >
-          Go back
-        </button></a
-      >
- 
-    </div>
-    <form method="post" action="<?=$_SERVER["PHP_SELF"]?>">
-          
-    </form>
-  </body>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+</body>
 </html>

@@ -13,7 +13,7 @@
     echo '<script type="text/javascript">
        window.onload = function () { alert("Successfully Donated"); } 
 </script>';
-header("Location: admin .php");
+header("Location: admin.php");
   }
 ?>
 <!DOCTYPE html>

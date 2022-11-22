@@ -2,8 +2,8 @@
     require_once("crudcon.php");
     if(isset($_GET['Del']))
          {
-             $Donar_id = $_GET['Del'];
-             $query = " delete from Phone where Donar_id = '".$Donar_id."'";
+             $Phone_no = $_GET['Del'];
+             $query = " delete from Phone where Phone_no = '".$Phone_no."'";
              $result = mysqli_query($con,$query);
              if($result)
              {
